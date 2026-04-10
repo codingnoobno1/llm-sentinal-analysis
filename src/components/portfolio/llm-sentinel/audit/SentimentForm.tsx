@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import axios from 'axios';
 import { Shield, Activity, ChevronRight, AlertCircle, Loader2 } from 'lucide-react';
 
@@ -17,11 +18,19 @@ interface SentimentFormProps {
 }
 
 export default function SentimentForm({ onResult }: SentimentFormProps) {
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     base_model_id: '',
     ft_model_id: '',
     dataset_description: '',
   });
+
+  useEffect(() => {
+    const modelParam = searchParams.get('model');
+    if (modelParam) {
+      setFormData(prev => ({ ...prev, base_model_id: modelParam }));
+    }
+  }, [searchParams]);
   const [status, setStatus] = useState<keyof typeof STATUS_MESSAGES>('idle');
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -39,7 +48,20 @@ export default function SentimentForm({ onResult }: SentimentFormProps) {
     try {
       setStatus('loading');
       
-      const response = await axios.post('/api/audit', formData, {
+      // Transform into AuditRequest schema
+      const auditPayload = {
+        models: [
+          { model_id: formData.base_model_id, is_baseline: true, parameters: {} },
+          { model_id: formData.ft_model_id, is_baseline: false, parameters: {} }
+        ],
+        dataset_description: formData.dataset_description || "General capability evaluation",
+        domains: ["arithmetic", "code", "logic", "instruction"],
+        // Compatibility for backend mapping
+        base_model_id: formData.base_model_id,
+        ft_model_id: formData.ft_model_id
+      };
+
+      const response = await axios.post('/api/audit', auditPayload, {
         headers: { 'Content-Type': 'application/json' },
         timeout: 600000,
       });

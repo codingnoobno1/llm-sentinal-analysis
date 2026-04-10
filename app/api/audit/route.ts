@@ -5,9 +5,9 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     
-    // Proxying to the Python backend running on localhost:8000
-    // If the backend is not running, axios will throw an error
-    const response = await axios.post("http://localhost:8000/api/audit", body, {
+    // Proxying to the Python backend running on localhost:5000
+    // Endpoint updated to /audit/run per orchestrator schema
+    const response = await axios.post("http://localhost:5000/audit/run", body, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     // If the backend is not reachable, we return a helpful error
     if (error.code === 'ECONNREFUSED') {
       return NextResponse.json(
-        { detail: "Forensic Node (Python Backend) is not reachable at localhost:8000. Please start the backend server." },
+        { detail: "Forensic Node (Python Backend) is not reachable at localhost:5000. Please start the backend server." },
         { status: 503 }
       );
     }
