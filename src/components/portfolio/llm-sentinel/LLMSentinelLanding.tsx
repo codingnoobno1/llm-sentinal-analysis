@@ -10,6 +10,7 @@ import Scoring from "./Scoring";
 import ValueProp from "./ValueProp";
 import EvalDashboard from "./EvalDashboard";
 import AnalyticsHeatmap from "./AnalyticsHeatmap";
+import AboutMITR from "./AboutMITR";
 
 export default function LLMSentinelLanding() {
   return (
@@ -26,6 +27,7 @@ export default function LLMSentinelLanding() {
         <Architecture />
         <Scoring />
         <ValueProp />
+        <AboutMITR />
       </main>
       
       <footer className="py-12 border-t border-charcoal/5 bg-white px-8">
