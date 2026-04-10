@@ -8,6 +8,7 @@ import Solution from "./Solution";
 import Architecture from "./Architecture";
 import Scoring from "./Scoring";
 import ValueProp from "./ValueProp";
+import EvalDashboard from "./EvalDashboard";
 
 export default function LLMSentinelLanding() {
   return (
@@ -19,6 +20,7 @@ export default function LLMSentinelLanding() {
           <ProblemDepth />
         </div>
         <Solution />
+        <EvalDashboard />
         <Architecture />
         <Scoring />
         <ValueProp />

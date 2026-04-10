@@ -6,7 +6,7 @@ import { Cpu, Globe, Server, Database, Share2, ArrowRight } from "lucide-react";
 
 export default function Architecture() {
   return (
-    <section id="architecture" className="py-24 bg-[#0a0a0a] px-4">
+    <section id="architecture" className="py-24 bg-charcoal px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">System Architecture</h2>
@@ -17,19 +17,18 @@ export default function Architecture() {
 
         {/* Components Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-20">
-          <ArchCard icon={<Globe />} title="Frontend" subtitle="React + Visualization" color="text-blue-400" />
-          <ArchCard icon={<Server />} title="Backend" subtitle="FastAPI Orchestration" color="text-purple-400" />
-          <ArchCard icon={<Cpu />} title="Eval Engine" subtitle="Prompt + Scoring" color="text-emerald-400" />
-          <ArchCard icon={<Database />} title="Model API" subtitle="Hugging Face / Custom" color="text-amber-400" />
-          <ArchCard icon={<Share2 />} title="Reg. Detector" subtitle="Delta Computation" color="text-red-400" />
+          <ArchCard icon={<Globe />} title="Frontend" subtitle="React + Visualization" color="text-orange-red" />
+          <ArchCard icon={<Server />} title="Backend" subtitle="FastAPI Orchestration" color="text-orange-red" />
+          <ArchCard icon={<Cpu />} title="Eval Engine" subtitle="Prompt + Scoring" color="text-white" />
+          <ArchCard icon={<Database />} title="Model API" subtitle="Hugging Face / Custom" color="text-zinc-500" />
+          <ArchCard icon={<Share2 />} title="Reg. Detector" subtitle="Delta Computation" color="text-orange-red" />
         </div>
 
         {/* Data Flow */}
-        <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 relative overflow-hidden">
+        <div className="p-8 rounded-3xl bg-indigo-blue/10 border border-white/5 relative overflow-hidden">
           <h3 className="text-2xl font-bold text-white mb-12 text-center">Stateless Evaluation Data Flow</h3>
           
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 relative">
-            {/* Custom SVG Connector Line could go here, but using cards for simplicity */}
             <FlowStep count="1" title="Model IDs" desc="Input identifiers" />
             <Arrow />
             <FlowStep count="2" title="Dispatch" desc="Identical prompts" />
@@ -42,7 +41,7 @@ export default function Architecture() {
           </div>
 
           <div className="mt-16 flex justify-center">
-            <div className="px-6 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-mono font-bold">
+            <div className="px-6 py-2 rounded-full bg-orange-red/10 border border-orange-red/20 text-orange-red text-sm font-mono font-bold">
               Final Output: Capability Heatmap + Comparison
             </div>
           </div>

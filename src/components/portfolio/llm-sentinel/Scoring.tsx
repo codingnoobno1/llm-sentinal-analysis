@@ -6,7 +6,7 @@ import { Calculator, AlertCircle, CheckCircle, TrendingUp, TrendingDown, Minus }
 
 export default function Scoring() {
   return (
-    <section id="scoring" className="py-24 bg-[#050505] px-4 overflow-hidden">
+    <section id="scoring" className="py-24 bg-charcoal px-4 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Deterministic Scoring</h2>
@@ -21,17 +21,17 @@ export default function Scoring() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="p-8 rounded-3xl bg-blue-600/5 border border-blue-500/20 relative"
+            className="p-8 rounded-3xl bg-orange-red/5 border border-orange-red/20 relative"
           >
             <div className="absolute top-0 right-0 p-4 opacity-10">
-              <Calculator className="w-32 h-32 text-blue-500" />
+              <Calculator className="w-32 h-32 text-orange-red" />
             </div>
             
             <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-              <span className="text-blue-500 italic text-4xl font-serif">Δ</span> The Delta Formula
+              <span className="text-orange-red italic text-4xl font-serif">Δ</span> The Delta Formula
             </h3>
             
-            <div className="bg-zinc-950 p-6 rounded-2xl border border-white/5 mb-8">
+            <div className="bg-charcoal p-6 rounded-2xl border border-white/5 mb-8">
               <code className="text-2xl text-white font-mono">Δ = Fine-tuned – Base</code>
             </div>
 
@@ -39,22 +39,22 @@ export default function Scoring() {
               <Threshold 
                 range="Δ < -10" 
                 label="Regression" 
-                color="text-red-400" 
-                bg="bg-red-500/10"
+                color="text-orange-red" 
+                bg="bg-orange-red/10"
                 icon={<TrendingDown className="w-4 h-4" />}
               />
               <Threshold 
                 range="-10 ≤ Δ ≤ +5" 
                 label="Stable" 
-                color="text-amber-400" 
-                bg="bg-amber-500/10"
+                color="text-zinc-400" 
+                bg="bg-white/5"
                 icon={<Minus className="w-4 h-4" />}
               />
               <Threshold 
                 range="Δ > +5" 
                 label="Improved" 
-                color="text-emerald-400" 
-                bg="bg-emerald-500/10"
+                color="text-white" 
+                bg="bg-white/10"
                 icon={<TrendingUp className="w-4 h-4" />}
               />
             </div>

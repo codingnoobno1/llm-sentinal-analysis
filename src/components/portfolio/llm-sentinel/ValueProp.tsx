@@ -6,7 +6,7 @@ import { CheckCircle2, ShieldCheck, Zap, BarChart3, ArrowRight } from "lucide-re
 
 export default function ValueProp() {
   return (
-    <section className="py-24 bg-gradient-to-b from-[#050505] to-[#000] px-4">
+    <section className="py-24 bg-gradient-to-b from-charcoal to-black px-4">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -14,11 +14,11 @@ export default function ValueProp() {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <div className="inline-flex p-3 rounded-2xl bg-blue-600/10 text-blue-500 mb-6">
+          <div className="inline-flex p-3 rounded-2xl bg-orange-red/10 text-orange-red mb-6">
             <ShieldCheck className="w-8 h-8" />
           </div>
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
-            What gets measured, <span className="text-blue-500 underline decoration-blue-500/30 underline-offset-8">gets fixed.</span>
+            What gets measured, <span className="text-orange-red underline decoration-orange-red/30 underline-offset-8">gets fixed.</span>
           </h2>
           <p className="text-zinc-400 text-xl leading-relaxed">
             Stop deploying blind. Get the measurable comparison you need to improve the reliability of your fine-tuned models.
@@ -49,7 +49,7 @@ export default function ValueProp() {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          <button className="px-12 py-5 bg-white text-black font-black text-lg rounded-2xl hover:bg-zinc-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)] group flex items-center gap-3 mx-auto">
+          <button className="px-12 py-5 bg-orange-red text-white font-black text-lg rounded-2xl hover:bg-orange-600 transition-all shadow-[0_0_30px_rgba(255,69,0,0.3)] group flex items-center gap-3 mx-auto">
             Audit Your Model Now
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
