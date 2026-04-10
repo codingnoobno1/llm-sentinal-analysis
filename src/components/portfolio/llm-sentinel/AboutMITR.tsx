@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function AboutMITR() {
   return (
-    <section className="py-24 bg-charcoal text-white overflow-hidden relative" id="about-mitr">
+    <section className="pt-40 pb-24 bg-charcoal text-white overflow-hidden relative" id="about-mitr">
       {/* Background accents */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-indigo-blue/10 to-transparent pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-red/30 to-transparent" />

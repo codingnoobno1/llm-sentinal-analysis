@@ -18,6 +18,7 @@ export default function LLMSentinelLanding() {
     <div className="bg-white min-h-screen selection:bg-indigo-blue/10 selection:text-indigo-blue">
       <Navbar />
       <main>
+        <AboutMITR />
         <Hero />
         <ProductIdentity />
         <div id="problem-anchor">
@@ -29,7 +30,6 @@ export default function LLMSentinelLanding() {
         <Architecture />
         <Scoring />
         <ValueProp />
-        <AboutMITR />
       </main>
       
       <footer className="py-12 border-t border-charcoal/5 bg-white px-8">
