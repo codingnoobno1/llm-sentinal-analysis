@@ -6,10 +6,10 @@ import { AlertTriangle, Zap, Brain, Terminal } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-charcoal pt-20 px-8">
-      {/* Background Accents (Subtle) */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-indigo-blue/5 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/5" />
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white pt-20 px-8">
+      {/* Background Accents (Subtle Tints) */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-blue/[0.02] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-charcoal/5" />
 
       <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center z-10">
         <motion.div 
@@ -18,24 +18,24 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="text-left"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-indigo-blue/10 border border-indigo-blue/20 text-indigo-blue text-[10px] font-black uppercase tracking-widest mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-indigo-blue/5 border border-indigo-blue/10 text-indigo-blue text-[10px] font-black uppercase tracking-widest mb-10">
             <Zap className="w-3 h-3" />
             <span>Enterprise Model Verification</span>
           </div>
           
-          <h1 className="text-4xl lg:text-6xl font-bold text-white leading-[1.1] mb-10 tracking-tight">
-            Quantify <span className="text-orange-red underline decoration-indigo-blue/30 underline-offset-8">Regression</span> in Fine-Tuned LLMs
+          <h1 className="text-4xl lg:text-6xl font-black text-charcoal leading-[1.05] mb-10 tracking-tight">
+            Quantify <span className="text-orange-red underline decoration-indigo-blue/20 underline-offset-8">Regression</span> in Fine-Tuned LLMs
           </h1>
           
-          <p className="text-lg text-zinc-500 mb-12 max-w-lg leading-relaxed">
-            Protect your production reliability. Sentinel provides a standardized framework to detect capability degradation before deployment.
+          <p className="text-lg text-gray-500 mb-12 max-w-lg leading-relaxed">
+            Protect your production reliability. Sentinel provides a clinical framework to detect capability degradation before deployment.
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <button className="px-10 py-4 bg-orange-red text-white font-bold text-xs uppercase tracking-widest hover:bg-orange-600 transition-all">
+            <button className="px-10 py-4 bg-orange-red text-white font-bold text-xs uppercase tracking-widest hover:bg-orange-600 transition-all shadow-lg shadow-orange-red/20">
               Initialize Audit
             </button>
-            <button className="px-10 py-4 bg-white/5 text-white font-bold text-xs uppercase tracking-widest border border-white/10 hover:bg-white/10 transition-all">
+            <button className="px-10 py-4 bg-white text-charcoal font-bold text-xs uppercase tracking-widest border border-charcoal/10 hover:bg-zinc-50 transition-all">
               Methodology
             </button>
           </div>
@@ -47,9 +47,9 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="relative bg-white/5 p-10 border border-white/5">
-            <div className="flex items-center justify-between mb-12 border-b border-white/5 pb-6">
-              <span className="text-[10px] text-zinc-500 uppercase tracking-[0.3em] font-black">Capability Delta v1.0.4</span>
+          <div className="relative bg-white p-10 border border-charcoal/5 shadow-2xl shadow-charcoal/5">
+            <div className="flex items-center justify-between mb-12 border-b border-charcoal/5 pb-6 text-zinc-400">
+              <span className="text-[10px] uppercase tracking-[0.3em] font-black">Capability Delta v1.0.4</span>
               <div className="flex gap-1">
                 <div className="w-2 h-2 bg-orange-red" />
                 <div className="w-2 h-2 bg-indigo-blue" />
@@ -69,8 +69,8 @@ export default function Hero() {
                 <AlertTriangle className="w-5 h-5 text-orange-red shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-[10px] font-black text-orange-red uppercase mb-1">Critical Regression</h4>
-                  <p className="text-xs text-zinc-400 leading-relaxed">
-                    Detected significant degradation in core reasoning paths. Model integrity below enterprise threshold.
+                  <p className="text-xs text-gray-500 leading-relaxed">
+                    Significant degradation detected in core reasoning paths. Model integrity below enterprise threshold.
                   </p>
                 </div>
               </div>
