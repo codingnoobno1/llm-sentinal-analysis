@@ -62,7 +62,9 @@ function ArchCard({ icon, title, subtitle, color }: { icon: React.ReactNode, tit
       className="p-6 rounded-2xl bg-zinc-900 border border-white/5 text-center flex flex-col items-center gap-4 transition-all"
     >
       <div className={`p-3 rounded-full bg-zinc-800 ${color}`}>
-        {React.cloneElement(icon as React.ReactElement, { className: "w-6 h-6" })}
+        {React.isValidElement(icon) && React.cloneElement(icon as React.ReactElement<{ className?: string }>, { 
+          className: "w-6 h-6" 
+        })}
       </div>
       <div>
         <h4 className="text-white font-bold text-sm mb-1">{title}</h4>
