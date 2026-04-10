@@ -11,6 +11,7 @@ import ValueProp from "./ValueProp";
 import EvalDashboard from "./EvalDashboard";
 import AnalyticsHeatmap from "./AnalyticsHeatmap";
 import AboutMITR from "./AboutMITR";
+import ProductIdentity from "./ProductIdentity";
 
 export default function LLMSentinelLanding() {
   return (
@@ -18,6 +19,7 @@ export default function LLMSentinelLanding() {
       <Navbar />
       <main>
         <Hero />
+        <ProductIdentity />
         <div id="problem-anchor">
           <ProblemDepth />
         </div>
