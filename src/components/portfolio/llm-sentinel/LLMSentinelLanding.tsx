@@ -12,7 +12,7 @@ import EvalDashboard from "./EvalDashboard";
 
 export default function LLMSentinelLanding() {
   return (
-    <div className="bg-black min-h-screen selection:bg-blue-500/30 selection:text-blue-200">
+    <div className="bg-white min-h-screen selection:bg-indigo-blue/10 selection:text-indigo-blue">
       <Navbar />
       <main>
         <Hero />
@@ -26,20 +26,20 @@ export default function LLMSentinelLanding() {
         <ValueProp />
       </main>
       
-      <footer className="py-12 border-t border-white/5 bg-black px-8">
+      <footer className="py-12 border-t border-charcoal/5 bg-white px-8">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-2">
-            <span className="text-xl font-bold tracking-tight text-white">
-              Sentinel <span className="text-blue-500 font-normal">LLM</span>
+            <span className="text-xl font-bold tracking-tight text-charcoal">
+              Sentinel <span className="text-orange-red font-light italic">Audit</span>
             </span>
           </div>
-          <div className="text-zinc-500 text-sm">
-            © 2026 Regression Sentinel Platform. Built for the era of specialized AI.
+          <div className="text-zinc-400 text-sm font-medium">
+            © 2026 Regression Sentinel Platform. Institutional grade AI auditing.
           </div>
-          <div className="flex gap-6 text-zinc-400 text-sm">
-            <a href="#" className="hover:text-white transition-colors">Documentation</a>
-            <a href="#" className="hover:text-white transition-colors">API Reference</a>
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
+          <div className="flex gap-6 text-zinc-500 text-[10px] font-black uppercase tracking-widest">
+            <a href="#" className="hover:text-charcoal transition-colors">Documentation</a>
+            <a href="#" className="hover:text-charcoal transition-colors">API</a>
+            <a href="#" className="hover:text-charcoal transition-colors">Security</a>
           </div>
         </div>
       </footer>

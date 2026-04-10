@@ -150,12 +150,12 @@ export default function EvalDashboard() {
 
 function SummaryStat({ icon, label, value }: { icon: React.ReactNode, label: string, value: string | number }) {
   return (
-    <div className="p-4 rounded-2xl bg-black/40 border border-white/5">
-      <div className="flex items-center gap-2 mb-2">
+    <div className="p-10 bg-white">
+      <div className="flex items-center gap-4 mb-4">
         {icon}
-        <span className="text-[10px] uppercase tracking-wider text-zinc-500 font-bold">{label}</span>
+        <span className="text-[10px] uppercase tracking-[0.3em] text-zinc-400 font-black">{label}</span>
       </div>
-      <div className="text-xl font-bold text-white">{value}</div>
+      <div className="text-3xl font-black text-charcoal">{value}</div>
     </div>
   );
 }
