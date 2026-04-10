@@ -29,46 +29,44 @@ const capabilities = [
 
 export default function Solution() {
   return (
-    <section id="solution" className="py-24 bg-gradient-to-b from-charcoal to-indigo-blue/20 px-4 overflow-hidden relative">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-red/50 to-transparent" />
-      
+    <section id="solution" className="py-32 bg-charcoal px-8 border-t border-white/5 relative">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-              LLM <span className="text-orange-red text-transparent bg-clip-text bg-gradient-to-r from-orange-red to-white">Regression Sentinel</span>
-            </h2>
-            <p className="text-zinc-400 text-lg mb-12">
-              A specialized platform designed to compare base vs. fine-tuned models, evaluating performance across vital logical and technical domains to ensure zero capability loss.
+            <h2 className="text-[10px] font-black font-mono uppercase tracking-[0.5em] text-indigo-blue mb-8">Solution Suite</h2>
+            <h3 className="text-3xl md:text-5xl font-bold text-white mb-10 tracking-tight">
+              Clinical <span className="text-orange-red italic">Validation</span>
+            </h3>
+            <p className="text-zinc-500 text-lg mb-16 leading-relaxed">
+              Sentinel employs a range of deterministic, domain-specific evaluation engines to verify that model fine-tuning does not compromise multi-domain intelligence.
             </p>
 
-            <div className="space-y-6">
-              <FeatureItem title="Capability Comparison" desc="Direct side-by-side analysis of model outputs." />
-              <FeatureItem title="Regression Detection" desc="Automated identification of performance deltas." />
-              <FeatureItem title="Heatmap Visualization" desc="Clear, visual reports of capability changes." />
+            <div className="space-y-10">
+              <FeatureItem title="Capability Forensics" desc="Bit-level side-by-side analysis of stochastic variations." />
+              <FeatureItem title="Regression Quant" desc="Mathematical detection of logic and reasoning deltas." />
+              <FeatureItem title="Infrastructure Audit" desc="Deployment-ready validation for mission-critical systems." />
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 border border-white/5">
             {capabilities.map((cap, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-orange-red/30 transition-all group"
+                transition={{ delay: i * 0.05 }}
+                className="p-10 bg-charcoal hover:bg-white/[0.02] transition-colors group"
               >
-                <div className="w-12 h-12 rounded-xl bg-orange-red/10 flex items-center justify-center text-orange-red mb-4 group-hover:bg-orange-red group-hover:text-white transition-colors">
-                  {cap.icon}
+                <div className="w-10 h-10 bg-indigo-blue/10 flex items-center justify-center text-indigo-blue mb-8 group-hover:bg-orange-red group-hover:text-white transition-all">
+                  {React.cloneElement(cap.icon as React.ReactElement, { className: "w-5 h-5" })}
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{cap.title}</h3>
-                <p className="text-sm text-zinc-500 leading-relaxed">{cap.desc}</p>
+                <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-widest">{cap.title}</h3>
+                <p className="text-xs text-zinc-500 leading-relaxed">{cap.desc}</p>
               </motion.div>
             ))}
           </div>

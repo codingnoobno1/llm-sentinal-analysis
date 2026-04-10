@@ -6,55 +6,51 @@ import { CheckCircle2, ShieldCheck, Zap, BarChart3, ArrowRight } from "lucide-re
 
 export default function ValueProp() {
   return (
-    <section className="py-24 bg-gradient-to-b from-charcoal to-black px-4">
+    <section className="py-40 bg-charcoal border-t border-white/5 px-8">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mb-20"
+          className="mb-32"
         >
-          <div className="inline-flex p-3 rounded-2xl bg-orange-red/10 text-orange-red mb-6">
-            <ShieldCheck className="w-8 h-8" />
+          <div className="inline-flex p-4 bg-indigo-blue text-white mb-10">
+            <ShieldCheck className="w-6 h-6" />
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
-            What gets measured, <span className="text-orange-red underline decoration-orange-red/30 underline-offset-8">gets fixed.</span>
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-12 uppercase tracking-tighter">
+            What gets measured, <span className="text-orange-red underline decoration-1 underline-offset-[12px]">gets fixed.</span>
           </h2>
-          <p className="text-zinc-400 text-xl leading-relaxed">
-            Stop deploying blind. Get the measurable comparison you need to improve the reliability of your fine-tuned models.
+          <p className="text-zinc-500 text-xl leading-relaxed max-w-2xl mx-auto font-medium">
+            Standardizing the audit layer for fine-tuned intelligence. Secure your model baseline with quantified verification.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5 mb-32">
           <ValueCard 
-            icon={<Zap className="w-5 h-5" />}
-            title="Pre-deploy Detection"
-            desc="Identify hidden failures before they reach production."
+            icon={<Zap className="w-4 h-4" />}
+            title="Pre-deploy Audit"
+            desc="Identify logic failures before production orchestration."
           />
           <ValueCard 
-            icon={<BarChart3 className="w-5 h-5" />}
-            title="Measurable Proof"
-            desc="Quantifiable data to justify fine-tuning decisions."
+            icon={<BarChart3 className="w-4 h-4" />}
+            title="Forensic Data"
+            desc="Institutional metrics to justify model adaptation."
           />
           <ValueCard 
-            icon={<CheckCircle2 className="w-5 h-5" />}
-            title="Reliability First"
-            desc="Ensure your specialization doesn't compromise core logic."
+            icon={<CheckCircle2 className="w-4 h-4" />}
+            title="Baseline Safety"
+            desc="Preserve core cognitive paths during specialization."
           />
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
+          transition={{ delay: 0.6 }}
         >
-          <button className="px-12 py-5 bg-orange-red text-white font-black text-lg rounded-2xl hover:bg-orange-600 transition-all shadow-[0_0_30px_rgba(255,69,0,0.3)] group flex items-center gap-3 mx-auto">
-            Audit Your Model Now
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-          <p className="mt-8 text-zinc-600 text-sm font-medium">
-            Join 50+ AI teams ensuring model stability.
+          <p className="mt-12 text-zinc-600 text-[10px] font-black uppercase tracking-[0.3em]">
+            Institutional Grade Verification Infrastructure
           </p>
         </motion.div>
       </div>
@@ -64,12 +60,12 @@ export default function ValueProp() {
 
 function ValueCard({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) {
   return (
-    <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 text-left">
-      <div className="w-10 h-10 rounded-xl bg-blue-600/10 flex items-center justify-center text-blue-500 mb-6">
+    <div className="p-10 bg-charcoal text-left group">
+      <div className="w-10 h-10 bg-indigo-blue/10 flex items-center justify-center text-indigo-blue mb-8 group-hover:bg-orange-red group-hover:text-white transition-all">
         {icon}
       </div>
-      <h4 className="text-white font-bold mb-3">{title}</h4>
-      <p className="text-sm text-zinc-500 leading-relaxed">{desc}</p>
+      <h4 className="text-sm font-black text-white mb-4 uppercase tracking-widest">{title}</h4>
+      <p className="text-xs text-zinc-500 leading-relaxed font-medium">{desc}</p>
     </div>
   );
 }

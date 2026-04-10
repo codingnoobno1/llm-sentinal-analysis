@@ -9,27 +9,27 @@ export default function Navbar() {
     <motion.nav 
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 bg-indigo-blue/40 backdrop-blur-md border-b border-white/5"
+      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-3 bg-charcoal border-b border-white/5"
     >
-      <div className="flex items-center gap-2">
-        <div className="p-2 bg-orange-red rounded-lg shadow-[0_0_15px_rgba(255,69,0,0.4)]">
-          <Shield className="w-6 h-6 text-white" />
+      <div className="flex items-center gap-3">
+        <div className="p-1.5 bg-indigo-blue rounded">
+          <Shield className="w-5 h-5 text-white" />
         </div>
-        <span className="text-xl font-bold tracking-tight text-white">
-          Sentinel <span className="text-orange-red font-normal">LLM</span>
+        <span className="text-lg font-bold tracking-tight text-white uppercase tracking-wider">
+          Sentinel <span className="text-orange-red font-light">Audit</span>
         </span>
       </div>
 
-      <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
-        <a href="#problem" className="hover:text-white transition-colors">The Problem</a>
-        <a href="#solution" className="hover:text-white transition-colors">Our Solution</a>
-        <a href="#architecture" className="hover:text-white transition-colors">Architecture</a>
-        <a href="#scoring" className="hover:text-white transition-colors">Scoring</a>
+      <div className="hidden md:flex items-center gap-10 text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-500">
+        <a href="#problem" className="hover:text-white transition-colors">Forensics</a>
+        <a href="#solution" className="hover:text-white transition-colors">Methodology</a>
+        <a href="#architecture" className="hover:text-white transition-colors">Infrastructure</a>
+        <a href="#scoring" className="hover:text-white transition-colors">Quantification</a>
       </div>
 
       <div className="flex items-center gap-4">
-        <button className="px-5 py-2 text-sm font-semibold text-white bg-orange-red rounded-full hover:bg-orange-600 transition-all shadow-[0_0_20px_rgba(255,69,0,0.3)]">
-          Get Started
+        <button className="px-6 py-2.5 text-[10px] font-black uppercase tracking-widest text-white bg-orange-red hover:bg-orange-600 transition-all">
+          Request Demo
         </button>
         <button className="p-2 md:hidden text-zinc-400">
           <Menu className="w-6 h-6" />

@@ -6,56 +6,58 @@ import { Calculator, AlertCircle, CheckCircle, TrendingUp, TrendingDown, Minus }
 
 export default function Scoring() {
   return (
-    <section id="scoring" className="py-24 bg-charcoal px-4 overflow-hidden">
+    <section id="scoring" className="py-32 bg-charcoal border-t border-white/5 px-8 overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Deterministic Scoring</h2>
-          <p className="text-zinc-500 text-lg max-w-2xl mx-auto">
-            Eliminating subjectivity with domain-specific, execution-based validation.
+        <div className="max-w-3xl mb-24">
+          <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-blue mb-6">Quantification Logic</h2>
+          <h3 className="text-3xl md:text-5xl font-bold text-white mb-10 tracking-tight">Deterministic Forensics</h3>
+          <p className="text-zinc-500 text-lg leading-relaxed">
+            Eliminate subjectivity. Sentinel uses domain-specific, execution-based validation to ensure model outputs adhere to institutional benchmarks.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           {/* Formula Section */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="p-8 rounded-3xl bg-orange-red/5 border border-orange-red/20 relative"
+            className="p-12 border border-white/5 bg-white/[0.02] relative"
           >
-            <div className="absolute top-0 right-0 p-4 opacity-10">
-              <Calculator className="w-32 h-32 text-orange-red" />
+            <div className="absolute top-0 right-0 p-8 opacity-5">
+              <Calculator className="w-32 h-32 text-indigo-blue" />
             </div>
             
-            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-              <span className="text-orange-red italic text-4xl font-serif">Δ</span> The Delta Formula
+            <h3 className="text-sm font-bold text-white mb-10 uppercase tracking-widest flex items-center gap-3">
+              The Delta Formula <span className="text-orange-red font-serif italic text-2xl">Δ</span>
             </h3>
             
-            <div className="bg-charcoal p-6 rounded-2xl border border-white/5 mb-8">
-              <code className="text-2xl text-white font-mono">Δ = Fine-tuned – Base</code>
+            <div className="bg-charcoal p-8 border border-white/10 mb-12">
+              <code className="text-3xl text-white font-mono tracking-tighter">Δ = F(m) – B(m)</code>
+              <p className="mt-4 text-[10px] text-zinc-600 uppercase tracking-widest">Where F is fine-tuned and B is base model performance.</p>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-px bg-white/5 border border-white/5">
               <Threshold 
-                range="Δ < -10" 
-                label="Regression" 
+                range="Δ < -10.0" 
+                label="CRITICAL REGRESSION" 
                 color="text-orange-red" 
-                bg="bg-orange-red/10"
-                icon={<TrendingDown className="w-4 h-4" />}
+                bg="bg-charcoal"
+                icon={<TrendingDown className="w-3 h-3" />}
               />
               <Threshold 
-                range="-10 ≤ Δ ≤ +5" 
-                label="Stable" 
-                color="text-zinc-400" 
-                bg="bg-white/5"
-                icon={<Minus className="w-4 h-4" />}
+                range="-10.0 ≤ Δ ≤ +5.0" 
+                label="STABLE VARIANCE" 
+                color="text-zinc-500" 
+                bg="bg-charcoal"
+                icon={<Minus className="w-3 h-3" />}
               />
               <Threshold 
-                range="Δ > +5" 
-                label="Improved" 
+                range="Δ > +5.0" 
+                label="VERIFIED IMPROVEMENT" 
                 color="text-white" 
-                bg="bg-white/10"
-                icon={<TrendingUp className="w-4 h-4" />}
+                bg="bg-charcoal"
+                icon={<TrendingUp className="w-3 h-3" />}
               />
             </div>
           </motion.div>

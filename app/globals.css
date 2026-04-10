@@ -2,10 +2,11 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #121212;
+  --foreground: #1c1c21;
   --brand-orange: #ff4500;
-  --brand-indigo: #4b0082;
-  --brand-charcoal: #121212;
+  --brand-indigo: #2e3192;
+  --brand-charcoal: #1c1c21;
+  --brand-earth: #634432;
   --brand-white: #ffffff;
 }
 
@@ -15,13 +16,14 @@
   --color-orange-red: var(--brand-orange);
   --color-indigo-blue: var(--brand-indigo);
   --color-charcoal: var(--brand-charcoal);
+  --color-earth-brown: var(--brand-earth);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #121212;
+    --background: #1c1c21;
     --foreground: #ffffff;
   }
 }

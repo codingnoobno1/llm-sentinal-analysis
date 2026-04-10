@@ -6,73 +6,69 @@ import { XCircle, CheckCircle2, ArrowRight, ShieldAlert } from "lucide-react";
 
 export default function ProblemDepth() {
   return (
-    <section id="problem" className="py-24 bg-charcoal px-4">
+    <section id="problem" className="py-32 bg-charcoal border-t border-white/5 px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">The Blind Spot in AI Development</h2>
-          <p className="text-zinc-500 text-lg max-w-2xl mx-auto">
-            The real issue isn't catastrophic forgetting—it's the complete lack of detection mechanisms during the fine-tuning process.
+        <div className="max-w-3xl mb-24">
+          <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-orange-red mb-6">Gap Analysis</h2>
+          <h3 className="text-3xl md:text-5xl font-bold text-white mb-8">The Blind Spot in Development</h3>
+          <p className="text-zinc-500 text-lg leading-relaxed">
+            Catastrophic forgetting is a known phenomenon, but the persistent failure of enterprise teams is the lack of detection infrastructure during the fine-tuning phase.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/5 border border-white/5">
           {/* Current Workflow */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="p-8 rounded-3xl bg-white/5 border border-white/5 relative overflow-hidden group"
+            className="p-12 bg-charcoal relative group"
           >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-2 bg-orange-red/10 rounded-lg">
-                <ShieldAlert className="w-5 h-5 text-orange-red" />
-              </div>
-              <h3 className="text-xl font-bold text-white">Current Blind Workflow</h3>
+            <div className="flex items-center gap-3 mb-10">
+              <ShieldAlert className="w-4 h-4 text-orange-red" />
+              <h3 className="text-sm font-bold text-white uppercase tracking-widest">Legacy Workflow</h3>
             </div>
 
-            <div className="space-y-6">
-              <WorkflowStep status="completed" label="Fine-tune model" />
-              <WorkflowStep status="completed" label="Validate only target domain" />
-              <WorkflowStep status="danger" label="Deploy blindly" note="Missing: Cross-domain regression testing" />
+            <div className="space-y-8 mb-16">
+              <WorkflowStep status="completed" label="Domain Specific Adaptation" />
+              <WorkflowStep status="completed" label="Targeted Validation" />
+              <WorkflowStep status="danger" label="Blind Deployment" note="Critical Failure Point: Cross-domain regression audit missing" />
             </div>
 
-            <div className="mt-12 p-6 rounded-2xl bg-orange-red/5 border border-orange-red/10">
-              <h4 className="text-sm font-bold text-orange-red uppercase tracking-widest mb-4">Impact Profile</h4>
-              <ul className="space-y-3">
-                <ImpactItem text="Failures appear in production" />
-                <ImpactItem text="Unsafe or unreliable outputs" />
-                <ImpactItem text="Loss of trust in AI systems" />
+            <div className="pt-10 border-t border-white/5">
+              <h4 className="text-[10px] font-black text-zinc-600 uppercase tracking-widest mb-6">Production Risks</h4>
+              <ul className="space-y-4">
+                <ImpactItem text="Regression-driven production failures" />
+                <ImpactItem text="Unverified model logic degradation" />
+                <ImpactItem text="Systemic loss of institutional trust" />
               </ul>
             </div>
           </motion.div>
 
           {/* Sentinel Workflow */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="p-8 rounded-3xl bg-indigo-blue/10 border border-indigo-blue/20 relative overflow-hidden group"
+            className="p-12 bg-charcoal relative group border-l border-white/5"
           >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-2 bg-orange-red/20 rounded-lg">
-                <CheckCircle2 className="w-5 h-5 text-orange-red" />
-              </div>
-              <h3 className="text-xl font-bold text-white">Sentinel-Enabled Workflow</h3>
+            <div className="flex items-center gap-3 mb-10">
+              <CheckCircle2 className="w-4 h-4 text-indigo-blue" />
+              <h3 className="text-sm font-bold text-white uppercase tracking-widest">Sentinel Framework</h3>
             </div>
 
-            <div className="space-y-6">
-              <WorkflowStep status="completed" label="Fine-tune model" />
-              <WorkflowStep status="sentinel" label="Sentinel Regression Audit" note="Full cross-domain capability check" />
-              <WorkflowStep status="success" label="Safe Deployment" note="Validated stability & performance" />
+            <div className="space-y-8 mb-16">
+              <WorkflowStep status="completed" label="Domain Specific Adaptation" />
+              <WorkflowStep status="sentinel" label="Automated Regression Audit" note="Full spectrum capability verification" />
+              <WorkflowStep status="success" label="Certified Deployment" note="Verification signature attached" />
             </div>
 
-            <div className="mt-12 p-6 rounded-2xl bg-orange-red/10 border border-orange-red/20">
-              <h4 className="text-sm font-bold text-white uppercase tracking-widest mb-4">The Solution Outcome</h4>
-              <ul className="space-y-3">
-                <OutcomeItem text="Zero production regressions" />
-                <OutcomeItem text="Verified safety constraints" />
-                <OutcomeItem text="Measurable confidence scores" />
+            <div className="pt-10 border-t border-white/5">
+              <h4 className="text-[10px] font-black text-indigo-blue uppercase tracking-widest mb-6">Outcome Benefits</h4>
+              <ul className="space-y-4">
+                <OutcomeItem text="Zero-day regression containment" />
+                <OutcomeItem text="Standardized safety metrics" />
+                <OutcomeItem text="Verifiable model confidence scores" />
               </ul>
             </div>
           </motion.div>
