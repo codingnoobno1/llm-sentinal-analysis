@@ -63,7 +63,9 @@ export default function Solution() {
                 className="p-10 bg-charcoal hover:bg-white/[0.02] transition-colors group"
               >
                 <div className="w-10 h-10 bg-indigo-blue/10 flex items-center justify-center text-indigo-blue mb-8 group-hover:bg-orange-red group-hover:text-white transition-all">
-                  {React.cloneElement(cap.icon as React.ReactElement, { className: "w-5 h-5" })}
+                  {React.isValidElement(cap.icon) && React.cloneElement(cap.icon as React.ReactElement<{ className?: string }>, { 
+                    className: "w-5 h-5" 
+                  })}
                 </div>
                 <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-widest">{cap.title}</h3>
                 <p className="text-xs text-zinc-500 leading-relaxed">{cap.desc}</p>
