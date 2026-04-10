@@ -15,20 +15,24 @@ export default function EvalDashboard() {
   const [isRunning, setIsRunning] = useState(false);
   const [report, setReport] = useState<any>(null);
 
-  const runEval = () => {
+  const runEval = async () => {
     setIsRunning(true);
-    // Simulate API call to FastAPI backend
-    setTimeout(() => {
-      setReport({
-        summary: { total: 14, regressions: 2, improvements: 3, status: "Warning" },
-        cases: [
-          { id: "math_01", domain: "Arithmetic", delta: 0, status: "stable" },
-          { id: "logic_02", domain: "Logic", delta: -2, status: "regression" },
-          { id: "code_05", domain: "Code", delta: 1, status: "improved" }
-        ]
+    try {
+      const response = await fetch("/api/eval", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          baseResponses: {}, // Optional: Add actual model outputs here
+          fineTunedResponses: {}
+        })
       });
+      const data = await response.json();
+      setReport(data);
+    } catch (error) {
+      console.error("Evaluation failed:", error);
+    } finally {
       setIsRunning(false);
-    }, 2000);
+    }
   };
 
   return (
