@@ -29,9 +29,12 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center gap-4">
-        <button className="hidden lg:block px-6 py-2.5 text-[10px] font-black uppercase tracking-widest text-[#2e3192] border border-[#2e3192]/20 hover:bg-[#2e3192]/5 transition-all">
+        <Link 
+          href="/audit"
+          className="hidden lg:block px-6 py-2.5 text-[10px] font-black uppercase tracking-widest text-[#2e3192] border border-[#2e3192]/20 hover:bg-[#2e3192]/5 transition-all text-center"
+        >
           Fine tune score check your model
-        </button>
+        </Link>
         <button className="px-6 py-2.5 text-[10px] font-black uppercase tracking-widest text-white bg-orange-red hover:bg-orange-600 transition-all">
           Request Demo
         </button>
