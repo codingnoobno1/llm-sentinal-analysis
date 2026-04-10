@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Shield, LayoutDashboard, Activity, Database, Menu } from "lucide-react";
 
 export default function Navbar() {
